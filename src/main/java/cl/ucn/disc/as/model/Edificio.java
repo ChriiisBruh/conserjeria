@@ -50,7 +50,7 @@ public class Edificio extends BaseModel{
      */
     @NotNull
     @Getter
-    private List<Departamento> departamentos = new ArrayList<>();
+    private List<Departamento> departamentos;
 
     /**
      * Method addDepartamento

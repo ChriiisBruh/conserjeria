@@ -83,7 +83,7 @@ public final class ValidationUtils {
      */
 
     public static Boolean isTelefonoValid(final String telefono) {
-        return telefono != null && telefono.length() <= 13;
+        return telefono != null && telefono.length() <= 30;
     }
 
     /**
@@ -92,7 +92,7 @@ public final class ValidationUtils {
      * @return true is valid
      */
     public static Boolean isNombreValid(final String nombre) {
-        return nombre != null && nombre.length() <= 20;
+        return nombre != null && nombre.length() <= 40;
     }
 
     /**
@@ -101,7 +101,7 @@ public final class ValidationUtils {
      * @return true is valid
      */
     public static Boolean isApellidosValid(final String apellidos) {
-        return apellidos != null && apellidos.length() <= 20;
+        return apellidos != null && apellidos.length() <= 40;
     }
 
 }

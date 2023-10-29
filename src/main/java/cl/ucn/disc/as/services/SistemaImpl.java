@@ -9,6 +9,7 @@ import javax.persistence.PersistenceException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 public class SistemaImpl implements Sistema{
@@ -112,5 +113,35 @@ public class SistemaImpl implements Sistema{
     @Override
     public List<Pago> getPagos(@NotNull String rut) {
         return this.database.find(Pago.class).where().eq("persona.rut", rut).findList();
+    }
+
+    @Override
+    public Optional<Persona> getPersona(String rut) {
+        Persona persona = this.database.find(Persona.class).where().eq("rut", rut).findOne();
+        return Optional.ofNullable(persona);
+    }
+
+    @Override
+    public void populate() {
+        Persona persona1 = Persona.builder()
+                .rut("20725077-5")
+                .nombre("Juan")
+                .apellidos("Perez")
+                .email("juan@example.com")
+                .telefono("123456789")
+                .build();
+
+        Persona persona2 = Persona.builder()
+                .rut("21029218-7")
+                .nombre("Maria")
+                .apellidos("Gonzalez")
+                .email("maria@example.com")
+                .telefono("987654321")
+                .build();
+
+        this.database.save(persona1);
+        this.database.save(persona2);
+
+        log.info("Base de datos poblada con datos de ejemplo.");
     }
 }
