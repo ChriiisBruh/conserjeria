@@ -9,6 +9,7 @@ import cl.ucn.disc.as.ui.ApiRestServer;
 import cl.ucn.disc.as.ui.WebController;
 import io.ebean.DB;
 import io.ebean.Database;
+import io.javalin.Javalin;
 import lombok.extern.slf4j.Slf4j;
 import java.util.Optional;
 
@@ -27,7 +28,13 @@ public final class Main {
     public static void main(String[] args) {
         log.debug("Starting Main ...");
 
-        ApiRestServer.start(7070, new WebController());
+        log.debug("Library path {}", System.getProperty("java.library.path"));
+
+        Javalin app = ApiRestServer.start(7070,new WebController());
+
+        log.debug("Stopping");
+
+        app.stop();
 
         log.debug("Done :* ");
 
