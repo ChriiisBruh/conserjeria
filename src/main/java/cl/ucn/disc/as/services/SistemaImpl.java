@@ -1,6 +1,9 @@
 package cl.ucn.disc.as.services;
 
 import cl.ucn.disc.as.model.*;
+import com.github.javafaker.Faker;
+import com.github.javafaker.service.FakeValuesService;
+import com.github.javafaker.service.RandomService;
 import io.ebean.Database;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
@@ -9,6 +12,7 @@ import javax.persistence.PersistenceException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @Slf4j
@@ -123,24 +127,48 @@ public class SistemaImpl implements Sistema{
 
     @Override
     public void populate() {
-        Persona persona1 = Persona.builder()
-                .rut("20725077-5")
-                .nombre("Juan")
-                .apellidos("Perez")
-                .email("juan@example.com")
-                .telefono("123456789")
-                .build();
+        {
+            Persona persona1 = Persona.builder()
+                    .rut("20725077-5")
+                    .nombre("Juan")
+                    .apellidos("Perez")
+                    .email("juan@example.com")
+                    .telefono("123456789")
+                    .build();
 
-        Persona persona2 = Persona.builder()
-                .rut("21029218-7")
-                .nombre("Maria")
-                .apellidos("Gonzalez")
-                .email("maria@example.com")
-                .telefono("987654321")
-                .build();
+            Persona persona2 = Persona.builder()
+                    .rut("21029218-7")
+                    .nombre("Maria")
+                    .apellidos("Gonzalez")
+                    .email("maria@example.com")
+                    .telefono("987654321")
+                    .build();
 
-        this.database.save(persona1);
-        this.database.save(persona2);
+            this.database.save(persona1);
+            this.database.save(persona2);
+        }
+        Locale locale = new Locale("es-CL");
+        FakeValuesService fvs = new FakeValuesService(locale, new RandomService());
+        Faker faker = new Faker(locale);
+
+        //faker
+        for(int i = 0; i<1000;i++){
+            Persona persona = Persona.builder()
+                    .rut(fvs.bothify("########-#"))
+                    .nombre(faker.name()
+                            .firstName())
+                    .apellidos(faker.name()
+                            .lastName())
+                    .email(fvs.bothify("????##@gmail.com"))
+                    .telefono(fvs.bothify("+569########"))
+                    .build();
+            this.database.save(persona);
+
+        }
+
+
+
+
 
         log.info("Base de datos poblada con datos de ejemplo.");
     }
