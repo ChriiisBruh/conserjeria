@@ -2,10 +2,10 @@
  * Copyright (c) 2023. Arquitectura de Sistemas, DISC, UCN.
  */
 
-package cl.ucn.disc.as.model;
+package cl.ucn.disc.as.conserjeria.model;
 
-import cl.ucn.disc.as.model.exceptions.IllegalDomainException;
-import cl.ucn.disc.as.utils.ValidationUtils;
+import cl.ucn.disc.as.conserjeria.model.exceptions.IllegalDomainException;
+import cl.ucn.disc.as.conserjeria.utils.ValidationUtils;
 import io.ebean.annotation.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

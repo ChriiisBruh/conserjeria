@@ -1,4 +1,4 @@
-package cl.ucn.disc.as.ui;
+package cl.ucn.disc.as.conserjeria.ui;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -12,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.time.Instant;
 

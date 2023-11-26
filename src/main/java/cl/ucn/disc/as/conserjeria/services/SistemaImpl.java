@@ -1,6 +1,6 @@
-package cl.ucn.disc.as.services;
+package cl.ucn.disc.as.conserjeria.services;
 
-import cl.ucn.disc.as.model.*;
+import cl.ucn.disc.as.conserjeria.model.*;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;

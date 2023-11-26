@@ -2,7 +2,7 @@
  * Copyright (c) 2023. Arquitectura de Sistemas, DISC, UCN.
  */
 
-package cl.ucn.disc.as.model;
+package cl.ucn.disc.as.conserjeria.model;
 
 import io.ebean.annotation.NotNull;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,6 @@ import lombok.Getter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

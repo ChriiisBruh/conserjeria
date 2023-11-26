@@ -2,7 +2,7 @@
  * Copyright (c) 2023. Departamento de Ingenieria de Sistemas y Computacion, Universidad Catolica del Norte.
  */
 
-package cl.ucn.disc.as.utils;
+package cl.ucn.disc.as.conserjeria.utils;
 
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;

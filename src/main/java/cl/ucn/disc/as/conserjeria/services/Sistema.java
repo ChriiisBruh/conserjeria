@@ -1,6 +1,6 @@
-package cl.ucn.disc.as.services;
+package cl.ucn.disc.as.conserjeria.services;
 
-import cl.ucn.disc.as.model.*;
+import cl.ucn.disc.as.conserjeria.model.*;
 
 import java.time.Instant;
 import java.util.List;

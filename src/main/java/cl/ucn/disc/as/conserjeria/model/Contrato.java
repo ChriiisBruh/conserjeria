@@ -1,12 +1,9 @@
-package cl.ucn.disc.as.model;
+package cl.ucn.disc.as.conserjeria.model;
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.List;
 import io.ebean.annotation.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.ToString;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
