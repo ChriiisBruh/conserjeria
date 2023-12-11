@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public final class PersonaGrpcServiceImpl extends PersonaGrpcServiceGrpc.PersonaGrpcServiceImplBase {
-
     /**
      * @param request
      * @param responseObserver
